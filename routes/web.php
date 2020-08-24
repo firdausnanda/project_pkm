@@ -30,3 +30,4 @@ Route::get('/mahasiswa','mahasiswa@dashboard')->name('mahasiswa.dashboard')->mid
 Route::get('/data_diri','mahasiswa@data_diri');
 Route::get('/data_pkm','mahasiswa@data_pkm');
 
+//modal coba
