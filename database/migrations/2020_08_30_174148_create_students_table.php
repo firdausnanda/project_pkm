@@ -20,7 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('nim')->unique();
             $table->string('nama');
             $table->string('tempat_lahir')->nullable();
-            $table->string('tgl_lahir')->nullable();
+            $table->date('tgl_lahir')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('jk')->nullable();
             $table->string('username_sim')->nullable();
