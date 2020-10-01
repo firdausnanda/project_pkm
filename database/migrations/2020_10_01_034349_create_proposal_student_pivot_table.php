@@ -26,10 +26,7 @@ class CreateProposalStudentPivotTable extends Migration
      * @return void
      */
     public function down()
-    {   Schema::table('proposal_student', function (Blueprint $table) {
-            $table->dropForeign('proposal_student_proposal_id');
-            $table->dropForeign('proposal_student_student_id');
-        });
+    {   
         Schema::dropIfExists('proposal_student');
     }
 }
