@@ -23,11 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('mahasiswa.dashboard');
-    }
-
-    public function adminHome()
-    {
-        return view('home');
+        return view('welcome');
     }
 }
