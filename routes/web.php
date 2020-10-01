@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth','student'], 'prefix' => 'student', 'as' =>
     Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
 });
 
-Route::group(['middleware' => ['auth','teacher'], 'prefix' => 'teacher', 'as' => 'teacher.'], function () {
-  // teacher dashboard
-  Route::get('/', ['as' => 'index', 'uses' => 'Teacher\HomeController@index']);
-});
+// Route::group(['middleware' => ['auth','teacher'], 'prefix' => 'teacher', 'as' => 'teacher.'], function () {
+//   // teacher dashboard
+//   Route::get('/', ['as' => 'index', 'uses' => 'Teacher\HomeController@index']);
+// });
