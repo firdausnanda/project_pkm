@@ -21,15 +21,15 @@ class UserSeeder extends Seeder
           "password" => "123456"
         ],
         [
+          "email" => "teacher@simpkm.com",
+          "role" => "teacher",
+          "password" => "123456"
+        ],
+        [
           "email" => "admin@simpkm.com",
           "role" => "admin",
           "password" => "123456"
         ],
-        [
-          "email" => "teacher@simpkm.com",
-          "role" => "teacher",
-          "password" => "123456"
-        ]
       );
 
       foreach ($users as $user) {
