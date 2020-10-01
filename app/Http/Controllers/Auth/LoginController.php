@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -27,7 +29,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -39,31 +42,48 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(Request $request)
-    {   
-        $input = $request->all();
-   
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-   
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
-            if (auth()->user()->role == "Admin") {
-                return redirect()->route('admin.dashboard');
-            }
-            elseif (auth()->user()->role == "Mahasiswa") {
-                return redirect()->route('mahasiswa.dashboard');
-            }
-            else
-            {
-                 return redirect()->route('login');
-            }
-        }else{
-            return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+    public function redirectTo()
+    {
+      switch (Auth::user()->role) {
+        case 'admin':
+          $this->redirectTo = '/admin';
+          return $this->redirectTo;
+          break;
+        case 'student':
+          $this->redirectTo = '/student';
+          return $this->redirectTo;
+          break;
+        case 'teacher':
+          $this->redirectTo = '/teacher';
+          return $this->redirectTo;
+          break;
+        default:
+          $this->redirectTo = '/login';
+          return $this->redirectTo;
+          break;
+      }
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
         }
-          
+
+        return $request->wantsJson()
+            ? new Response('', 204)
+            : redirect('/login');
     }
 }
