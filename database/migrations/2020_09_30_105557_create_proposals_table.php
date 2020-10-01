@@ -17,6 +17,7 @@ class CreateProposalsTable extends Migration
             $table->id();
             $table->foreignId('scheme_id')->constrained();
             $table->text('judul');
+            $table->string('status')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
         });
