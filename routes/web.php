@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Auth::routes();
+Auth::routes();
 
 // ROUTE ADMIN
 Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     // admin dashboard
-    // Route::get('/', ['as' => 'index', 'uses' => 'Admin\HomeController@index']);
+    Route::get('/', ['as' => 'index', 'uses' => 'Admin\HomeController@index']);
 
 
     // user management
@@ -45,4 +45,9 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     // Route::get('proposal', ['as' => 'proposal.index', 'uses' => 'Admin\ProposalController@index']);
     
     // export features
+});
+
+Route::group(['middleware' => ['auth','student'], 'prefix' => 'student', 'as' => 'student.'], function () {
+    // admin dashboard
+    Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
 });
