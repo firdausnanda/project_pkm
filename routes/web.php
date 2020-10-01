@@ -48,6 +48,11 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
 });
 
 Route::group(['middleware' => ['auth','student'], 'prefix' => 'student', 'as' => 'student.'], function () {
-    // admin dashboard
+    // student dashboard
     Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
+});
+
+Route::group(['middleware' => ['auth','teacher'], 'prefix' => 'teacher', 'as' => 'teacher.'], function () {
+  // teacher dashboard
+  Route::get('/', ['as' => 'index', 'uses' => 'Teacher\HomeController@index']);
 });
