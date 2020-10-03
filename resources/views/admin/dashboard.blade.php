@@ -85,11 +85,11 @@
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
-                	<li> <a href="#" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a>
+                	<li> <a href="admin" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a>
                 	</li>
                 	<li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Report</span></a>
                 	</li>
-                	<li> <a href="/akun" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Akun</span></a>
+                	<li> <a href="admin/users" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Akun</span></a>
                 	</li>
                 	<li class="devider"></li>
                 	<li><a class="waves-effect" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
