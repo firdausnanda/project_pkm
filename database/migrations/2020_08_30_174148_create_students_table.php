@@ -15,8 +15,8 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('major_id')->constrained();
+            $table->foreignId('user_id');
+            $table->foreignId('major_id');
             $table->string('nim')->unique();
             $table->string('nama');
             $table->string('tempat_lahir')->nullable();
@@ -36,10 +36,10 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-          $table->dropForeign('students_user_id_foreign');
-          $table->dropForeign('students_major_id_foreign');
-        });
+        // Schema::table('students', function (Blueprint $table) {
+        //   $table->dropForeign('students_user_id_foreign');
+        //   $table->dropForeign('students_major_id_foreign');
+        // });
         Schema::dropIfExists('students');
     }
 }
