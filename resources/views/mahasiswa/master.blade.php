@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PKM ITSK Soepraoen">
     <meta name="author" content="Firdaus Nanda">
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/itsk-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('plugins/images/itsk-logo.png')}}">
     <title>Dashboard - Mahasiswa Dashboard</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Menu CSS -->
-    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="{{ asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="{{ asset('css/animate.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
     <!-- Sweetalerts CSS -->
-    <link href="plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <!-- color CSS -->
-    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <link href="{{ asset('css/colors/default.css')}}" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -88,23 +88,23 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="{{ asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js')}}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{ asset('js/waves.js')}}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <script src="plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('js/custom.min.js')}}"></script>
+    <script src="{{ asset('plugins/bower_components/datatables/jquery.dataTables.min.js')}}"></script>
     <!--Style Switcher -->
-    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="{{ asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
     <!-- Sweet-Alert  -->
-    <script src="plugins/bower_components/sweetalert/sweetalert.min.js"></script>
-    <script src="plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="{{ asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{ asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
 
     <script>
     $(document).ready(function() {

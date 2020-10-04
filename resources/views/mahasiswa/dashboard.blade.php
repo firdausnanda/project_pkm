@@ -87,7 +87,7 @@
                 <ul class="nav" id="side-menu">
                 	<li> <a href="/mahasiswa" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu"> Dashboard</span></a>
                 	</li>
-                	<li> <a href="/data_diri" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri & Anggota</span></a>
+                	<li> <a href="student/team" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri & Anggota</span></a>
                 	</li>
                 	<li> <a href="/data_pkm" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Data PKM</span></a>
                 	</li>
