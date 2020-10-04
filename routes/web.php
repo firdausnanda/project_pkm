@@ -56,6 +56,12 @@ Route::group(['middleware' => ['auth','student'], 'prefix' => 'student', 'as' =>
     // team management
     Route::get('team', ['as' => 'team.index', 'uses' => 'Student\TeamController@index']);
 
+    // proposal_pkm management
+    Route::get('proposal', ['as' => 'proposal.index', 'uses' => 'Student\ProposalController@index']);
+
+
+
+
 
 });
 
