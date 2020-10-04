@@ -33,7 +33,7 @@
 <section id="wrapper" class="new-login-register">
       <div class="lg-info-panel">
               <div class="inner-panel">
-                  <a href="javascript:void(0)" class="p-20 di"><img src="plugins/images/itsk-logo.png"></a>
+                  <a href="/" class="p-20 di"><img src="plugins/images/itsk-logo.png"></a>
                   <div class="lg-content">
                       <h2>THE ULTIMATE & MULTIPURPOSE ADMIN PANEL OF 2020</h2>
                       <p class="text-muted">with this admin you can get 2000+ pages, 500+ ui component, 2000+ icons, different demos and many more... </p>
