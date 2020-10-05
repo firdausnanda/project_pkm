@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PKM ITSK Soepraoen">
     <meta name="author" content="Firdaus Nanda">
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/itsk-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('plugins/images/itsk-logo.png')}}">
     <title>Dashboard - Admin Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">

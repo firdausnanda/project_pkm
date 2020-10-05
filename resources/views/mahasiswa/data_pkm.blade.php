@@ -7,10 +7,10 @@
 			<!-- Logo -->
 			<a class="logo" href="#">
 				<!-- Logo icon image, you can use font-icon also --><b>
-				<!--This is dark logo icon--><img src="plugins/images/itsk-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="plugins/images/itsk-logo.png" alt="home" class="light-logo" />
+				<!--This is dark logo icon--><img src="{{ asset('plugins/images/itsk-logo.png')}}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="{{ asset('plugins/images/itsk-logo.png')}}" alt="home" class="light-logo" />
 			</b>
 			<!-- Logo text image you can use text also --><span class="hidden-xs">
-			<!--This is dark logo text--><img src="plugins/images/itsk-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="plugins/images/itsk-text-dark.png" alt="home" class="light-logo" />
+			<!--This is dark logo text--><img src="{{ asset('plugins/images/itsk-text.png')}}" alt="home" class="dark-logo" /><!--This is light logo text--><img src="{{ asset('plugins/images/itsk-text-dark.png')}}" alt="home" class="light-logo" />
 		</span> </a>
 	</div>
 	<!-- /Logo -->
@@ -29,7 +29,7 @@
 					<ul class="dropdown-menu dropdown-user animated flipInY">
 						<li>
 							<div class="dw-user-box">
-								<div class="u-img"><img src="plugins/images/users/noname.jpg" alt="user" /></div>
+								<div class="u-img"><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user" /></div>
 								<div class="u-text">
 									<h4>Firdaus Nanda</h4>
 									<p class="text-muted">aan@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -67,7 +67,7 @@
 		</div>
 		<div class="user-profile">
 			<div class="dropdown user-pro-body">
-				<div><img src="plugins/images/users/noname.jpg" alt="user-img" class="img-circle"></div>
+				<div><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user-img" class="img-circle"></div>
 				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Firdaus Nanda<span class="caret"></span></a>
 				<ul class="dropdown-menu animated flipInY">
                             <!-- <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
@@ -86,11 +86,11 @@
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
-                	<li> <a href="/mahasiswa" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu"> Dashboard</span></a>
+                	<li> <a href="/student" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu"> Dashboard</span></a>
                 	</li>
-                	<li> <a href="/data_diri" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri & Anggota</span></a>
+                	<li> <a href="/student/team" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri & Anggota</span></a>
                 	</li>
-                	<li> <a href="/data_pkm" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Data PKM</span></a>
+                	<li> <a href="/student/proposal" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Data PKM</span></a>
                 	</li>
                 	<li class="devider"></li>
                 	<li><a class="waves-effect" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -117,7 +117,7 @@
 		<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
 		<!-- <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a> -->
 		<ol class="breadcrumb">
-			<li><a href="/mahasiswa">Dashboard</a></li>
+			<li><a href="/student">Dashboard</a></li>
 			<li class="active">Data PKM</li>
 		</ol>
 	</div>
