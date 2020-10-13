@@ -4,7 +4,7 @@
 <div class="new-login-box">
   <div class="white-box">
     <h3 class="box-title m-b-0">Sign UP to Admin</h3> <small>Enter your details below</small>
-    <form class="form-horizontal new-lg-form"action="{{ route('register') }}" method="POST">
+    <form class="form-horizontal new-lg-form"action="{{ route('register.create') }}" method="POST">
       @csrf
 
       <div class="form-group ">
@@ -37,19 +37,6 @@
           <input id="password-confirm" type="password" class="form-control" type="password" required="" name="password_confirmation" autocomplete="new-password" placeholder="Confirm Password"> 
         </div>
       </div>
-
-      <div class="form-group ">
-        <div class="col-xs-12">
-           <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="student" required autocomplete="role" readonly>
-
-            @error('role')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-        </div>
-      </div>
-
       <div class="form-group text-center m-t-20">
         <div class="col-xs-12">
           <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Sign Up</button>
