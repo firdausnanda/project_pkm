@@ -33,10 +33,11 @@
 <section id="wrapper" class="new-login-register">
       <div class="lg-info-panel">
               <div class="inner-panel">
-                  <a href="/" class="p-20 di"><img src="plugins/images/itsk-logo.png"></a>
                   <div class="lg-content">
-                      <h2>THE ULTIMATE & MULTIPURPOSE ADMIN PANEL OF 2020</h2>
-                      <p class="text-muted">with this admin you can get 2000+ pages, 500+ ui component, 2000+ icons, different demos and many more... </p>
+                      <img src="plugins/images/ITSK2.png" style="width:150px;" alt="logo-itsk" class="mx-auto d-block">
+                      <h1 class="text-white">SISTEM INFORMASI PKM</h1>
+                      <h3 class="text-white">Institut Teknologi Sains dan Kesehatan <br> RS dr. Soepraoen</h4>
+                      {{-- <p class="text-muted">with this admin you can get 2000+ pages, 500+ ui component, 2000+ icons, different demos and many more... </p> --}}
                   </div>
               </div>
       </div>
