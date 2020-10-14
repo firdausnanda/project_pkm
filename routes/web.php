@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // ROUTE ADMIN
 Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     // export features
 });
 
-Route::group(['middleware' => ['auth','student'], 'prefix' => 'student', 'as' => 'student.'], function () {
+Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'student', 'as' => 'student.'], function () {
 
     // student dashboard
     Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
