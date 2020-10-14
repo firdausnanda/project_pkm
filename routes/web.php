@@ -53,6 +53,7 @@ Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'studen
     // student dashboard
     Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
     Route::get('settings', ['as' => 'settings', 'uses' => 'Student\HomeController@settings']);
+    Route::get('profile', ['as' => 'profile', 'uses' => 'Student\HomeController@profile']);
 
     // team management
     Route::get('team', ['as' => 'team', 'uses' => 'Student\TeamController@index']);
