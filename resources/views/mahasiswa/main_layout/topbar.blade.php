@@ -4,10 +4,10 @@
 			<!-- Logo -->
 			<a class="logo" href="#">
 				<!-- Logo icon image, you can use font-icon also --><b>
-				<!--This is dark logo icon--><img src="plugins/images/itsk-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="plugins/images/itsk-logo.png" alt="home" class="light-logo" />
+				<!--This is dark logo icon--><img src="{{ asset('plugins/images/itsk-logo.png')}}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="plugins/images/itsk-logo.png" alt="home" class="light-logo" />
 			</b>
 			<!-- Logo text image you can use text also --><span class="hidden-xs">
-			<!--This is dark logo text--><img src="plugins/images/itsk-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="plugins/images/itsk-text-dark.png" alt="home" class="light-logo" />
+			<!--This is dark logo text--><img src="{{ asset('plugins/images/itsk-text.png')}}" alt="home" class="dark-logo" /><!--This is light logo text--><img src="plugins/images/itsk-text-dark.png" alt="home" class="light-logo" />
 		</span> </a>
 	</div>
 	<!-- /Logo -->
@@ -26,7 +26,7 @@
 					<ul class="dropdown-menu dropdown-user animated flipInY">
 						<li>
 							<div class="dw-user-box">
-								<div class="u-img"><img src="plugins/images/users/noname.jpg" alt="user" /></div>
+								<div class="u-img"><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user" /></div>
 								<div class="u-text">
 									<h4>Firdaus Nanda</h4>
 									<p class="text-muted">aan@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
