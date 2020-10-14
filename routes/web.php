@@ -55,10 +55,10 @@ Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'studen
     Route::get('settings', ['as' => 'settings', 'uses' => 'Student\HomeController@settings']);
 
     // team management
-    Route::get('team', ['as' => 'team.index', 'uses' => 'Student\TeamController@index']);
+    Route::get('team', ['as' => 'team', 'uses' => 'Student\TeamController@index']);
 
     // proposal_pkm management
-    Route::get('proposal', ['as' => 'proposal.index', 'uses' => 'Student\ProposalController@index']);
+    Route::get('proposal', ['as' => 'proposal', 'uses' => 'Student\ProposalController@index']);
 
 
 
