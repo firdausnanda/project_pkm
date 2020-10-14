@@ -16,4 +16,9 @@ class HomeController extends Controller
     {
       return view('mahasiswa.account_settings');
     }
+
+    public function profile()
+    {
+      return "profile page";
+    }
 }
