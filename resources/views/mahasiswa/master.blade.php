@@ -12,7 +12,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('plugins/bower_components/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
     <!-- Menu CSS -->
     <link href="{{ asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
     <!-- animation CSS -->
