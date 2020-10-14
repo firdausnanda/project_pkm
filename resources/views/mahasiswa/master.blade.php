@@ -48,14 +48,14 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         
-        @yield('topbar')
+        @include('topbar')
 
         <!-- End Top Navigation -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
 
-        @yield('sidebar')
+        @include('sidebar')
         
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
