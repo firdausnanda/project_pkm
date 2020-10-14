@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('konten')
+@section('content')
 <div class="new-login-box">
   <div class="white-box">
     <h3 class="box-title m-b-0">Sign UP to Admin</h3> <small>Enter your details below</small>
