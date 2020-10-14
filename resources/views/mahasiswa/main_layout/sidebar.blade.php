@@ -21,7 +21,7 @@
       <ul class="nav" id="side-menu">
         <li> <a href="{{ route('student.index')}}" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu"> Dashboard</span></a>
         </li>
-        <li> <a href="{{ route('student.team') }}" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri</span></a>
+        <li> <a href="{{ route('student.profile') }}" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Diri</span></a>
         </li>
         <li> <a href="{{ route('student.proposal') }}" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Data PKM</span></a>
         </li>
