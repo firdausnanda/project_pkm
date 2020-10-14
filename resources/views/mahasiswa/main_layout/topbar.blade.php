@@ -29,7 +29,7 @@
 								<div class="u-img"><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user" /></div>
 								<div class="u-text">
 									<h4>Firdaus Nanda</h4>
-									<p class="text-muted">aan@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+									<p class="text-muted">aan@gmail.com</p><a href={{ route('student.profile')}} class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
 								</div>
 							</li>
 							<li role="separator" class="divider"></li>
@@ -37,7 +37,7 @@
                             <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
                             <li><a href="#"><i class="ti-email"></i> Inbox</a></li> -->
                             <!-- <li role="separator" class="divider"></li> -->
-                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="{{ route('student.settings')}}"><i class="ti-settings"></i> Account Settings</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">{{ __('Logout') }}</span></a>
                      		<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

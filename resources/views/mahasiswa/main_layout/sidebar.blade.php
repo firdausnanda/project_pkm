@@ -8,7 +8,7 @@
 				<div><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user-img" class="img-circle"></div>
 				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Firdaus Nanda<span class="caret"></span></a>
 				<ul class="dropdown-menu animated flipInY">
-            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+            <li><a href="{{ route('student.profile') }}">View Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">{{ __('Logout') }}</span></a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
