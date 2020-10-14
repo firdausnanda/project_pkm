@@ -19,36 +19,39 @@
 
 <!-- Pesan oranye -->
 <div class="row">
-	<div class="alert alert-warning"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+	<div class="alert alert-warning"> <i class="fa fa-exclamation" aria-hidden="true"></i> Pengusulan PKM hanya dilakukan oleh masing-masing Ketua Kelompok </div>
 </div>
 
 <!-- modal pop up otomatis -->
 <div id="peringatan-data-pkm" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Perhatian</h4>
+                <h4 class="modal-title"><strong>Perhatian</strong></h4>
             </div>
             <div class="modal-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <p>
+                Usulan PKM hanya dilakukan oleh Ketua Kelompok, anggota tidak perlu mengusulkan PKM.
+              </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
             </div>
         </div>
 
     </div>
 </div>
 
+<div style="margin-bottom: 10px; margin-top: 10px;">
+  <button class="btn btn-info"><i class="mdi mdi-plus fa-fw"></i> Tambah Data</button>
+</div>
+
 <!-- Tabel PKM -->
 <div class="row">
 	<div class="col-sm-12">
 		<div class="white-box">
-			<h4 style="margin-top: -5px;">Data PKM</h4>
-			<div style="margin-bottom: 10px; margin-top: 20px;"><button class="btn btn-info btn-xs"><i class="mdi mdi-bookmark-plus fa-fw"></i> Tambah Data</button></div>
 			<div class="table-responsive">
 				<table id="myTable" class="table table-striped">
 					<thead>
