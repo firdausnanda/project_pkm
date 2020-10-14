@@ -5,7 +5,7 @@
 		</div>
 		<div class="user-profile">
 			<div class="dropdown user-pro-body">
-				<div><img src="plugins/images/users/noname.jpg" alt="user-img" class="img-circle"></div>
+				<div><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user-img" class="img-circle"></div>
 				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Firdaus Nanda<span class="caret"></span></a>
 				<ul class="dropdown-menu animated flipInY">
             <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
