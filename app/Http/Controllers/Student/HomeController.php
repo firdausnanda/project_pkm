@@ -11,4 +11,9 @@ class HomeController extends Controller
     {
       return view('mahasiswa.dashboard');
     }
+
+    public function settings()
+    {
+      return view('mahasiswa.account_settings');
+    }
 }
