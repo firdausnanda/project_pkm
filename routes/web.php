@@ -17,8 +17,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::post('register', ['as' => 'register.create', 'uses' => 'Auth\RegisterController@create']);
-
 // ROUTE ADMIN
 Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     
