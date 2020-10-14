@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -45,6 +46,7 @@ class UserSeeder extends Seeder
       foreach ($users as $user) {
         User::create([
           'email' => $user['email'],
+          'email_verified_at' => Carbon::now(),
           'role' => $user['role'],
           'password' => Hash::make($user['password']),
           ]
