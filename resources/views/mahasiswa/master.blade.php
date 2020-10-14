@@ -48,14 +48,14 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         
-        @include('topbar')
+        @include('mahasiswa.main_layout.topbar')
 
         <!-- End Top Navigation -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
 
-        @include('sidebar')
+        @include('mahasiswa.main_layout.sidebar')
         
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
