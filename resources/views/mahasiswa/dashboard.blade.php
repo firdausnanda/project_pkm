@@ -21,56 +21,21 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="white-box">
-			<h4 style="margin-top: -5px;">Data Usulan PKM User</h4>
+			<h4 style="margin-top: -5px;">Data Usulan PKM</h4>
 			<p class="text-muted m-b-30"></p>
 			<div class="table-responsive">
 				<table id="myTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th>Jenis PKM</th>
+							<th>Skema PKM</th>
 							<th>Judul PKM</th>
 							<th>Jabatan</th>
-							<th>Tanggal</th>
+							<th>Status</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Tiger Nixon</td>
-							<td>System Architect</td>
-							<td>Edinburgh</td>
-							<td>2011/04/25</td>
-							<td>$320,800</td>
-						</tr>
-						<tr>
-							<td>Garrett Winters</td>
-							<td>Accountant</td>
-							<td>Tokyo</td>
-							<td>2011/07/25</td>
-							<td>$170,750</td>
-						</tr>
-						<tr>
-							<td>Ashton Cox</td>
-							<td>Junior Technical Author</td>
-							<td>San Francisco</td>
-							<td>2009/01/12</td>
-							<td>$86,000</td>
-						</tr>
-						<tr>
-							<td>Cedric Kelly</td>
-							<td>Senior Javascript Developer</td>
-							<td>Edinburgh</td>
-							<td>2012/03/29</td>
-							<td>$433,060</td>
-						</tr>
-						<tr>
-							<td>Airi Satou</td>
-							<td>Accountant</td>
-							<td>Tokyo</td>
-							<td>2008/11/28</td>
-							<td>$162,700</td>
-						</tr>
-					</tbody>
+          </tbody>
 				</table>
 			</div>
 		</div>
