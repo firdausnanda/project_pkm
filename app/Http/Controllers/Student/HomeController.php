@@ -19,6 +19,6 @@ class HomeController extends Controller
 
     public function profile()
     {
-      return "profile page";
+      return view('mahasiswa.data_diri');
     }
 }
