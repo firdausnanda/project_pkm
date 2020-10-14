@@ -26,7 +26,7 @@
 			<div class="table-responsive">
 				<table id="myTable" class="table table-striped">
 					<thead>
-						<tr>
+						<tr class="text-center">
 							<th>Skema PKM</th>
 							<th>Judul PKM</th>
 							<th>Jabatan</th>
@@ -35,6 +35,24 @@
 						</tr>
 					</thead>
 					<tbody>
+            <tr>
+              <td>PKM-K</td>
+              <td>Judul PKM 1</td>
+              <td>Ketua</td>
+              <td class="text-center"><span class="badge badge-warning">proses review</span></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>PKM-K</td>
+              <td>Judul PKM 2</td>
+              <td>Aggota</td>
+              <td class="text-center"><span class="badge badge-success">selesai</span></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+              </td>
+            </tr>
           </tbody>
 				</table>
 			</div>
