@@ -13,4 +13,9 @@ class Student extends Model
     {
       return $this->belongsTo('App\Major');
     }
+
+    public function user()
+    {
+      return $this->hasOne('App\User');
+    }
 }
