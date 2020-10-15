@@ -29,7 +29,7 @@ class ProfileRequest extends FormRequest
             'nim' => 'required|numeric',
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'required',
-            'no_hp' => 'required|numeric|between:9,13',
+            'no_hp' => 'required|numeric|digits_between:9,13',
             'jk' => 'required'
         ];
     }
