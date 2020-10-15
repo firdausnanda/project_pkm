@@ -24,13 +24,25 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'prodi' => 'required',
-            'name' => 'required|min:3',
+            'major_id' => 'required',
+            'nama' => 'required|min:3',
             'nim' => 'required|numeric',
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'required',
             'no_hp' => 'required|numeric|digits_between:9,13',
             'jk' => 'required'
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'major_id.required' => 'A prodi field is required',
         ];
     }
 }
