@@ -26,9 +26,25 @@ class UserController extends Controller
 		DB::table('users')->insert([
 			'email' => $request->email,
 			'password' => bcrypt($request->password),
-			'role' => $request->role,
+			'role' => strtolower($request->role),
 			]);
 		return redirect('admin/users');
 
+	}
+
+	public function update(Request $request)
+	{
+		DB::table('users')->where('id',$request->id)->update([
+			'email' => $request->email,
+			'password' => bcrypt($request->password),
+			'role' => strtolower($request->role)			
+		]);
+		return redirect('admin/users');
+	}
+
+	public function delete($id)
+	{
+		DB::table('users')->where('id',$id)->delete();	
+		return redirect('admin/users');
 	}
 }

@@ -140,12 +140,32 @@
             });
         });
     });
+
     $('#example23').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     });
+
+     // modal edit users
+     $('#edit-user').on('show.bs.modal',function(event){
+        var button = $(event.relatedTarget)
+        var id = button.data('myid')
+        var email = button.data('email')
+        var password = button.data('password')
+        var role = button.data('role')
+
+        var modal = $(this)
+
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #email').val(email);
+        modal.find('.modal-body #password').val(password);
+        modal.find('.modal-body #role').val(role);
+    });
+
+
+
     </script>
 </body>
 
