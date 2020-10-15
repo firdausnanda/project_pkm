@@ -25,7 +25,7 @@
 			</div>
 			<div class="panel-wrapper">
 				<div class="panel-body">
-					<form action="{{ route("student.profile.edit") }}" method="POST" autocomplete="off" id="form-profile">
+					<form action="{{ route("student.profile.update") }}" method="POST" autocomplete="off" id="form-profile">
             @csrf
             <div class="row">
               <div class="col-lg-6">
