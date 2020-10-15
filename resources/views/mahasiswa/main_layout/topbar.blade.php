@@ -22,7 +22,7 @@
 			</li>
 			<li class="dropdown">
 				<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> 
-					<i class="fa fa-user" style="margin-right: 5px;"></i> <b class="hidden-xs"> Firdaus Nanda </b><span class="caret"></span> </a>
+					<i class="fa fa-user" style="margin-right: 5px;"></i> <b class="hidden-xs"> {{ Auth::user()->student->nama ?? Auth::user()->name }} </b><span class="caret"></span> </a>
 					<ul class="dropdown-menu dropdown-user animated flipInY">
 						<li>
 							<div class="dw-user-box">
