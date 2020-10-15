@@ -29,7 +29,7 @@
             @csrf
             <div class="row">
               <div class="col-lg-6">
-                <div class="form-group @error('prodi') has-error @enderror">
+                <div class="form-group @error('major_id') has-error @enderror">
                   <label for="">Program Studi</label>
                   <select class="form-control" name="major_id">
                     <option value="" selected disabled>- pilih -</option>
