@@ -21,7 +21,7 @@ class Student extends Model
 
     public function setNamaAttribute($value)
     {
-      $this->attributes['nama'] = ucwords($value);
+      $this->attributes['nama'] = ucwords(strtolower($value));
     }
 
     public function setTempatLahirAttribute($value)
