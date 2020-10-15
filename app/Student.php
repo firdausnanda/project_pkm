@@ -8,4 +8,9 @@ class Student extends Model
 {
     //
     protected $fillable = ['nim', 'nama', 'tempat_lahir', 'tgl_lahir', 'no_hp', 'jk', 'username_sim', 'password_sim'];
+
+    public function major()
+    {
+      return $this->belongsTo('App\Major');
+    }
 }
