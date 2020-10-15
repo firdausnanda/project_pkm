@@ -26,10 +26,10 @@ class ProfileRequest extends FormRequest
         return [
             'prodi' => 'required',
             'name' => 'required|min:3',
-            'nim' => 'required',
+            'nim' => 'required|numeric',
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'required',
-            'no_hp' => 'required|between:9,13',
+            'no_hp' => 'required|numeric|between:9,13',
             'jk' => 'required'
         ];
     }
