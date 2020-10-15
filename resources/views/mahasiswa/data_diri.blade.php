@@ -25,57 +25,82 @@
 			</div>
 			<div class="panel-wrapper">
 				<div class="panel-body">
-					<form>
+					<form action="{{ route("student.profile.edit") }}" method="POST" autocomplete="off" id="form-profile">
+            @csrf
             <div class="row">
               <div class="col-lg-6">
-                <div class="form-group">
+                <div class="form-group @error('prodi') has-error @enderror">
                   <label for="">Program Studi</label>
-                  <select class="form-control" name="major">
-                    <option selected disabled>- pilih -</option>
+                  <select class="form-control" name="prodi">
+                    <option value="" selected disabled>- pilih -</option>
+                    @foreach($majors as $major)
+                      <option value="{{ $major->id }}" {{ ($student->major_id == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                    @endforeach
                   </select>
+                  @error('prodi')
+                      <span id="prodi-validation" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group @error('name') has-error @enderror">
                   <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="name">
+                  <input type="text" class="form-control" name="name" value="{{ $student->name }}">
+                  @error('name')
+                      <span id="name-validation" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group @error('no_hp') has-error @enderror">
                   <label for="">Nomor HP</label>
-                  <input type="text" class="form-control" name="no_hp">
+                  <input type="text" class="form-control" name="no_hp" value="{{ $student->no_hp }}">
+                  @error('no_hp')
+                      <span id="no-hp-validation" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="form-group">
+                <div class="form-group @error('nim') has-error @enderror">
                   <label for="">Nomor Induk Mahasiswa</label>
-                  <input type="text" class="form-control" name="nim">
+                  <input type="text" class="form-control" name="nim" value="{{ $student->nim}}">
+                  @error('nim')
+                      <span id="nim-validation" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
                 <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group @error('tempat_lahir') has-error @enderror">
                       <label for="">Tempat Lahir</label>
-                      <input type="text" class="form-control" name="tempat_lahir">
+                      <input type="text" class="form-control" name="tempat_lahir" value="{{ $student->tempat_lahir }}">
+                      @error('tempat_lahir')
+                          <span id="tempat-lahir-validation" class="help-block">{{ $message }}</span>
+                      @enderror
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group @error('tgl_lahir') has-error @enderror">
                       <label for="">Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="tgl_lahir">
+                      <input type="text" class="form-control" name="tgl_lahir" value="{{ $student->tgl_lahir }}">
+                      @error('tgl_lahir')
+                          <span id="tgl-lahir-validation" class="help-block">{{ $message }}</span>
+                      @enderror
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group @error('jk') has-error @enderror">
                   <label for="">Jenis Kelamin</label>
                   <select class="form-control" name="jk">
-                    <option selected disabled>- pilih -</option>
-                    <option value="laki-laki">Laki-laki</option>
-                    <option value="perempuan">Perempuan</option>
+                    <option value="" selected disabled>- pilih -</option>
+                    <option value="laki-laki" {{ ($student->jk == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
+                    <option value="perempuan" {{ ($student->jk == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
                   </select>
+                  @error('jk')
+                      <span id="jk-validation" class="help-block">{{ $message }}</span>
+                  @enderror
                 </div>
               </div>
             </div>
           </form>
 				</div>
 				<div class="panel-footer"> 
-					<a class="btn btn-info m-t-10">Simpan</a> 
+          <a class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 				</div>
 			</div>
 		</div>
