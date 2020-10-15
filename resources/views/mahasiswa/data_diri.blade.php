@@ -19,85 +19,25 @@
 
 <!-- data peserta -->
 <div class="row">
-	<div class="col-lg-12">
+	<div class="col-lg-4 col-md-offset-4">
 		<div class="panel panel-default">
-			<div class="panel-heading"><i class="mdi mdi-account fa-fw"></i> Data Diri
+			<div class="panel-heading">
+        <i class="mdi mdi-account fa-fw"></i> Data Diri
 			</div>
 			<div class="panel-wrapper">
 				<div class="panel-body">
-					<form action="{{ route("student.profile.edit") }}" method="POST" autocomplete="off" id="form-profile">
-            @csrf
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group @error('prodi') has-error @enderror">
-                  <label for="">Program Studi</label>
-                  <select class="form-control" name="prodi">
-                    <option value="" selected disabled>- pilih -</option>
-                    @foreach($majors as $major)
-                      <option value="{{ $major->id }}" {{ ($student->major_id == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
-                    @endforeach
-                  </select>
-                  @error('prodi')
-                      <span id="prodi-validation" class="help-block">{{ $message }}</span>
-                  @enderror
-                </div>
-                <div class="form-group @error('name') has-error @enderror">
-                  <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="name" value="{{ $student->name }}">
-                  @error('name')
-                      <span id="name-validation" class="help-block">{{ $message }}</span>
-                  @enderror
-                </div>
-                <div class="form-group @error('no_hp') has-error @enderror">
-                  <label for="">Nomor HP</label>
-                  <input type="text" class="form-control" name="no_hp" value="{{ $student->no_hp }}">
-                  @error('no_hp')
-                      <span id="no-hp-validation" class="help-block">{{ $message }}</span>
-                  @enderror
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group @error('nim') has-error @enderror">
-                  <label for="">Nomor Induk Mahasiswa</label>
-                  <input type="text" class="form-control" name="nim" value="{{ $student->nim}}">
-                  @error('nim')
-                      <span id="nim-validation" class="help-block">{{ $message }}</span>
-                  @enderror
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group @error('tempat_lahir') has-error @enderror">
-                      <label for="">Tempat Lahir</label>
-                      <input type="text" class="form-control" name="tempat_lahir" value="{{ $student->tempat_lahir }}">
-                      @error('tempat_lahir')
-                          <span id="tempat-lahir-validation" class="help-block">{{ $message }}</span>
-                      @enderror
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="form-group @error('tgl_lahir') has-error @enderror">
-                      <label for="">Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="tgl_lahir" value="{{ $student->tgl_lahir }}">
-                      @error('tgl_lahir')
-                          <span id="tgl-lahir-validation" class="help-block">{{ $message }}</span>
-                      @enderror
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group @error('jk') has-error @enderror">
-                  <label for="">Jenis Kelamin</label>
-                  <select class="form-control" name="jk">
-                    <option value="" selected disabled>- pilih -</option>
-                    <option value="laki-laki" {{ ($student->jk == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
-                    <option value="perempuan" {{ ($student->jk == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
-                  </select>
-                  @error('jk')
-                      <span id="jk-validation" class="help-block">{{ $message }}</span>
-                  @enderror
-                </div>
-              </div>
-            </div>
-          </form>
+					<dl class="dl-horizontal">
+            <dt>NIM</dt><dd>{{ $student->nim }}</dd>
+            <dt>Prodi</dt><dd>{{ $student->major->fullname }}</dd>
+            <dt>Nama</dt><dd>{{ $student->nama }}</dd>
+            <dt>Tempat, Tgl Lahir</dt><dd>{{ $student->tempat_lahir }}, {{ $student->tgl_lahir }}</dd>
+            <dt>Jenis Kelamin</dt><dd>{{ $student->jk }}</dd>
+            <dt>No HP</dt><dd>{{ $student->no_hp }}</dd>
+            <hr>
+            <p class="text-center">Akun SIM Belmawa <br> <a href="https://simbelmawa.kemdikbud.go.id/Login.aspx" target="blank">https://simbelmawa.kemdikbud.go.id/Login.aspx</a></p>
+            <dt>Username</dt><dd>{{ $student->username_sim }}</dd>
+            <dt>Password</dt><dd>{{ $student->password_sim }}</dd>
+          </dl>
 				</div>
 				<div class="panel-footer"> 
           <a class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
