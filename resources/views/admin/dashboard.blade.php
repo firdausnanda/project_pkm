@@ -4,13 +4,12 @@
 <!-- Judul Halaman -->
 <div class="row bg-title">
 	<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-		<h4 class="page-title" style="font-weight: bold;">Selamat Datang, Firdaus</h4> 
+		<h4 class="page-title" style="font-weight: bold;">Selamat Datang, {{ ucwords(Auth::user()->name )}}</h4> 
 	</div>
 	<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 		<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
 		<!-- <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a> -->
 		<ol class="breadcrumb">
-			<li><a href="/mahasiswa">Dashboard</a></li>
 			<li class="active">Dashboard</li>
 		</ol>
 	</div>
@@ -21,7 +20,7 @@
 <div class="row">
 	<div class="col-md-12 col-lg-4">
 		<div class="white-box analytics-info">
-			<h4 class="box-title">Total Jumlah PKM Keseluruhan</h4>
+			<h4 class="box-title">Jumlah Usulan PKM</h4>
 			<ul class="list-inline two-part">
 				<li>
 					<div id="sparklinedash"></div>
@@ -45,7 +44,7 @@
 	</div>
 	<div class="col-md-12 col-lg-4">
 		<div class="white-box analytics-info">
-			<h4 class="box-title">Total Sudah Upload Berkas</h4>
+			<h4 class="box-title">Jumlah PKM Upload Berkas</h4>
 			<ul class="list-inline two-part">
 				<li>
 					<div id="sparklinedash3"></div>
@@ -78,10 +77,10 @@
 				<table id="myTable" class="table table-striped">
 					<thead>
 						<tr>
-							<th>Nama Mahasiswa</th>
 							<th>Judul PKM</th>
-							<th>Tanggal</th>
+							<th>Nama Mahasiswa</th>
 							<th>Prodi</th>
+							<th>Tanggal</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
