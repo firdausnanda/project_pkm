@@ -28,7 +28,8 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     Route::get('users', ['as' => 'users.index', 'uses' => 'Admin\UserController@index']);
     // Route::get('users/show', ['as' => 'users.show', 'uses' => 'Admin\UserController@show']);
     Route::post('users/store', ['as' => 'users.store', 'uses' => 'Admin\UserController@store']);
-    // Route::put('users/update', ['as' => 'users.update', 'uses' => 'Admin\UserController@update']);
+    Route::post('users/update', ['as' => 'users.update', 'uses' => 'Admin\UserController@update']);
+    Route::get('users/delete/{id}', ['as' => 'users.delete', 'uses' => 'Admin\UserController@delete']);
 
     // major management
     // Route::get('major', ['as' => 'major.index', 'uses' => 'Admin\MajorController@index']);

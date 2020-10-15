@@ -163,6 +163,50 @@
 	</div>
 </div>
 
+<!-- Modal Edit -->
+<div id="edit-user" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+				</button>
+				<h4 class="modal-title">Edit Data User</h4> 
+			</div>
+			<form action="/admin/users/update" method="post">
+			<div class="modal-body">
+				{{ csrf_field() }}
+					<div class="form-group">
+						<label for="recipient-name" class="control-label">ID</label>
+						<input type="text" class="form-control" id="id" name="id" readonly> 
+					</div>
+					<div class="form-group">
+						<label for="recipient-name" class="control-label">Email</label>
+						<input type="email" class="form-control" id="email" name="email" required=""> 
+					</div>
+					<div class="form-group">
+						<label for="nama-text" class="control-label">Password</label>
+						<input type="text" class="form-control" id="password" name="password" required="">
+					</div>
+					<div class="form-group">
+						<label class="control-label">Role</label>
+						<input type="text" class="form-control" id="role" name="role" required="">  
+						<!-- <select class="form-control" name="role" id="role">
+							<option>Student</option>
+							<option>Teacher</option>
+							<option>Admin</option>
+						</select> -->
+					</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close
+				</button>
+				<input type="submit" name="submit" class="btn btn-danger" value="Simpan">
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 <!-- Container Manage User -->
 <div class="row">
 	<div class="col-md-12">
@@ -182,15 +226,19 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php $no = 0;?>
 						@foreach($users as $u)
+						<?php $no++ ;?>
 						<tr>
-							<td class="text-center">{{ $u->id }}</td>
+							<td class="text-center">{{ $no }}</td>
 							<td>{{ $u->email }}</td>
 							<td>{{ $u->role }}</td>
 							<td>{{ $u->password }}</td>
 							<td>
-								<a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
-                                <a href="#" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a>
+								<button type="button" class="btn btn-warning btn-flat fa fa-pencil modal-show"  data-toggle="modal" data-target="#edit-user" data-myid="{{ $u->id }}" data-email="{{ $u->email }}" data-password="{{ $u->password }}" data-role="{{ $u->role }}"></button>
+                                <a href="/admin/users/delete/{{ $u->id }}" data-toggle="tooltip" data-original-title="Delete" onclick="return confirm('Yakin Hapus?')">
+                                <button class="btn btn-danger btn-flat fa fa-remove"></button>
+                                </a>
 							</td>
 						</tr>
 						@endforeach
