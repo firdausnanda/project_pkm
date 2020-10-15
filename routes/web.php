@@ -53,8 +53,12 @@ Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'studen
     // student dashboard
     Route::get('/', ['as' => 'index', 'uses' => 'Student\HomeController@index']);
     Route::get('settings', ['as' => 'settings', 'uses' => 'Student\HomeController@settings']);
+    // Profile
     Route::get('profile', ['as' => 'profile', 'uses' => 'Student\HomeController@profile']);
-    Route::post('profile/edit', ['as' => 'profile.edit', 'uses' => 'Student\HomeController@store']);
+    Route::get('profile/create', ['as' => 'profile.create', 'uses' => 'Student\HomeController@create']);
+    Route::post('profile/store', ['as' => 'profile.store', 'uses' => 'Student\HomeController@store']);
+    Route::get('profile/edit', ['as' => 'profile.edit', 'uses' => 'Student\HomeController@edit']);
+    Route::put('profile/update', ['as' => 'profile.update', 'uses' => 'Student\HomeController@update']);
 
     // proposal_pkm management
     Route::get('proposal', ['as' => 'proposal', 'uses' => 'Student\ProposalController@index']);
