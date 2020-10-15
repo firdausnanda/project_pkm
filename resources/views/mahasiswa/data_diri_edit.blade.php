@@ -42,10 +42,10 @@
                       <span id="prodi-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
-                <div class="form-group @error('name') has-error @enderror">
+                <div class="form-group @error('nama') has-error @enderror">
                   <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="name" value="{{ old('name', $student->name) }}">
-                  @error('name')
+                  <input type="text" class="form-control" name="nama" value="{{ old('nama', $student->nama) }}">
+                  @error('nama')
                       <span id="name-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
