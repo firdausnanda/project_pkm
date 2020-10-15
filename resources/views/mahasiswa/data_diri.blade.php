@@ -31,7 +31,7 @@
             <dt>Prodi</dt><dd>{{ $student->major->fullname }}</dd>
             <dt>Nama</dt><dd>{{ $student->nama }}</dd>
             <dt>Tempat, Tgl Lahir</dt><dd>{{ $student->tempat_lahir }}, {{ $student->tgl_lahir }}</dd>
-            <dt>Jenis Kelamin</dt><dd>{{ $student->jk }}</dd>
+            <dt>Jenis Kelamin</dt><dd>{{ ucfirst($student->jk) }}</dd>
             <dt>No HP</dt><dd>{{ $student->no_hp }}</dd>
             <hr>
             <p class="text-center"><strong>Akun SIM Belmawa</strong><br> <a href="https://simbelmawa.kemdikbud.go.id/Login.aspx" target="blank">https://simbelmawa.kemdikbud.go.id/Login.aspx</a></p>
