@@ -78,7 +78,7 @@
                   <div class="col-lg-6">
                     <div class="form-group @error('tgl_lahir') has-error @enderror">
                       <label for="">Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="tgl_lahir" value="{{ old('tgl_lahir', $student->tgl_lahir) }}">
+                      <input type="text" class="form-control datepicker" name="tgl_lahir" value="{{ old('tgl_lahir', $student->tgl_lahir) }}">
                       @error('tgl_lahir')
                           <span id="tgl-lahir-validation" class="help-block">{{ $message }}</span>
                       @enderror
