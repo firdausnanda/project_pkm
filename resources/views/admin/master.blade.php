@@ -46,14 +46,14 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
 
-        @yield('topbar')
+        @include('admin.main_layout.topbar')
 
         <!-- End Top Navigation -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
 
-        @yield('sidebar')
+        @include('admin.main_layout.sidebar')
         
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
