@@ -19,7 +19,7 @@
 
 <!-- data peserta -->
 <div class="row">
-	<div class="col-lg-4 col-md-offset-4">
+	<div class="col-lg-6 col-md-offset-3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
         <i class="mdi mdi-account fa-fw"></i> Data Diri
@@ -34,9 +34,9 @@
             <dt>Jenis Kelamin</dt><dd>{{ $student->jk }}</dd>
             <dt>No HP</dt><dd>{{ $student->no_hp }}</dd>
             <hr>
-            <p class="text-center">Akun SIM Belmawa <br> <a href="https://simbelmawa.kemdikbud.go.id/Login.aspx" target="blank">https://simbelmawa.kemdikbud.go.id/Login.aspx</a></p>
-            <dt>Username</dt><dd>{{ $student->username_sim }}</dd>
-            <dt>Password</dt><dd>{{ $student->password_sim }}</dd>
+            <p class="text-center"><strong>Akun SIM Belmawa</strong><br> <a href="https://simbelmawa.kemdikbud.go.id/Login.aspx" target="blank">https://simbelmawa.kemdikbud.go.id/Login.aspx</a></p>
+            <dt>Username</dt><dd>{{ $student->username_sim ?? '-'}}</dd>
+            <dt>Password</dt><dd>{{ $student->password_sim ?? '-' }}</dd>
           </dl>
 				</div>
 				<div class="panel-footer"> 
