@@ -26,6 +26,7 @@
 			<div class="panel-wrapper">
 				<div class="panel-body">
 					<form action="{{ route("student.profile.update") }}" method="POST" autocomplete="off" id="form-profile">
+            @method('put')
             @csrf
             <div class="row">
               <div class="col-lg-6">
@@ -34,7 +35,7 @@
                   <select class="form-control" name="prodi">
                     <option value="" selected disabled>- pilih -</option>
                     @foreach($majors as $major)
-                      <option value="{{ $major->id }}" {{ ($student->major_id == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                      <option value="{{ $major->id }}" {{ (old('prodi', $student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
                     @endforeach
                   </select>
                   @error('prodi')
@@ -43,14 +44,14 @@
                 </div>
                 <div class="form-group @error('name') has-error @enderror">
                   <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="name" value="{{ $student->name }}">
+                  <input type="text" class="form-control" name="name" value="{{ old('name', $student->name) }}">
                   @error('name')
                       <span id="name-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="form-group @error('no_hp') has-error @enderror">
                   <label for="">Nomor HP</label>
-                  <input type="text" class="form-control" name="no_hp" value="{{ $student->no_hp }}">
+                  <input type="text" class="form-control" name="no_hp" value="{{ old('no_hp', $student->no_hp) }}">
                   @error('no_hp')
                       <span id="no-hp-validation" class="help-block">{{ $message }}</span>
                   @enderror
@@ -59,7 +60,7 @@
               <div class="col-lg-6">
                 <div class="form-group @error('nim') has-error @enderror">
                   <label for="">Nomor Induk Mahasiswa</label>
-                  <input type="text" class="form-control" name="nim" value="{{ $student->nim}}">
+                  <input type="text" class="form-control" name="nim" value="{{ old('nim', $student->nim)}}">
                   @error('nim')
                       <span id="nim-validation" class="help-block">{{ $message }}</span>
                   @enderror
@@ -68,7 +69,7 @@
                   <div class="col-lg-6">
                     <div class="form-group @error('tempat_lahir') has-error @enderror">
                       <label for="">Tempat Lahir</label>
-                      <input type="text" class="form-control" name="tempat_lahir" value="{{ $student->tempat_lahir }}">
+                      <input type="text" class="form-control" name="tempat_lahir" value="{{ old('tempat_lahir', $student->tempat_lahir) }}">
                       @error('tempat_lahir')
                           <span id="tempat-lahir-validation" class="help-block">{{ $message }}</span>
                       @enderror
@@ -77,7 +78,7 @@
                   <div class="col-lg-6">
                     <div class="form-group @error('tgl_lahir') has-error @enderror">
                       <label for="">Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="tgl_lahir" value="{{ $student->tgl_lahir }}">
+                      <input type="text" class="form-control" name="tgl_lahir" value="{{ old('tgl_lahir', $student->tgl_lahir) }}">
                       @error('tgl_lahir')
                           <span id="tgl-lahir-validation" class="help-block">{{ $message }}</span>
                       @enderror
@@ -88,8 +89,8 @@
                   <label for="">Jenis Kelamin</label>
                   <select class="form-control" name="jk">
                     <option value="" selected disabled>- pilih -</option>
-                    <option value="laki-laki" {{ ($student->jk == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
-                    <option value="perempuan" {{ ($student->jk == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
+                    <option value="laki-laki" {{ (old('jk', $student->jk) == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
+                    <option value="perempuan" {{ (old('jk', $student->jk) == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
                   </select>
                   @error('jk')
                       <span id="jk-validation" class="help-block">{{ $message }}</span>
