@@ -40,7 +40,7 @@
           </dl>
 				</div>
 				<div class="panel-footer"> 
-          <a class="btn btn-warning" href="#" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+          <a class="btn btn-warning" href="{{ route('student.profile.edit')}}" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
 				</div>
 			</div>
 		</div>
