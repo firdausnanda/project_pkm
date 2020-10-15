@@ -8,15 +8,15 @@
 				<div>
           <img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user-img" class="img-circle">
         </div>
-				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ ucwords(Auth::user()->name)}}</a>
+				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ ucwords(Auth::user()->name)}}  </a>
       </div>
     </div>
     <ul class="nav" id="side-menu">
-      <li> <a href="admin" class="waves-effect active"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a>
+      <li> <a href="{{ route('admin.index')}}" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a>
       </li>
       <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Report</span></a>
       </li>
-      <li> <a href="admin/users" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Akun</span></a>
+      <li> <a href="{{ route('admin.users.index')}}" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Akun</span></a>
       </li>
       <li class="devider"></li>
       <li><a class="waves-effect" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
