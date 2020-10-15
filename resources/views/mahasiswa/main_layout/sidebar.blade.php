@@ -6,7 +6,7 @@
 		<div class="user-profile">
 			<div class="dropdown user-pro-body">
 				<div><img src="{{ asset('plugins/images/users/noname.jpg')}}" alt="user-img" class="img-circle"></div>
-				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Firdaus Nanda</a>
+				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->student->nama ?? Auth::user()->name }}</a>
 				
       </div>
     </div>

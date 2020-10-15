@@ -23,6 +23,8 @@
     <link href="{{ asset('plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
     <!-- color CSS -->
     <link href="{{ asset('css/colors/default.css')}}" id="theme" rel="stylesheet">
+    {{-- Bootsrap Datepicker --}}
+    <link rel="stylesheet" href="{{ asset('bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -105,10 +107,18 @@
     <!-- Sweet-Alert  -->
     <script src="{{ asset('plugins/bower_components/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{ asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
+    {{-- Datetime Picker --}}
+    <script src="{{ asset('bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
 
     <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
+        $('#myTable').DataTable({
+          ordering: false,
+          columnDefs: [
+            {className: 'dt-center', targets: [0,1,2,3,4]},
+          ]
+        });
+        
         $(document).ready(function() {
             var table = $('#example').DataTable({
                 "columnDefs": [{
@@ -145,15 +155,15 @@
                 }
             });
         });
-    });
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    });
 
-    $('#peringatan-data-pkm').modal('show');
+        $('#peringatan-data-pkm').modal('show');
+
+        $('.datepicker').datepicker({
+            autoclose: true,
+            format: "yyyy-mm-dd",
+            orientation: "bottom right"
+          }).attr("readonly", "readonly").css({"cursor":"pointer", "background":"white"});
+    });
     </script>
 </body>
 

@@ -39,7 +39,7 @@
               <td>PKM-K</td>
               <td>Judul PKM 1</td>
               <td>Ketua</td>
-              <td class="text-center"><span class="badge badge-warning">proses review</span></td>
+              <td><span class="label label-warning">{{ ucwords('proses review') }}</span></td>
               <td>
                 <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
               </td>
@@ -48,7 +48,7 @@
               <td>PKM-K</td>
               <td>Judul PKM 2</td>
               <td>Aggota</td>
-              <td class="text-center"><span class="badge badge-success">selesai</span></td>
+              <td><span class="label label-success">{{ ucwords('selesai') }}</span></td>
               <td>
                 <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
               </td>

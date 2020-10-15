@@ -45,7 +45,12 @@ class HomeController extends Controller
 
     public function store(ProfileRequest $request)
     {
-      dd($request->all());
+        $user = Auth::user();
+        $user->student->create($request->validated());
+        if ($user) {
+          return redirect('student/profile');
+        }
+        return redirect()->back();
     }
     
     public function edit()
@@ -57,8 +62,13 @@ class HomeController extends Controller
       }
     }
 
-    public function update(ProfileRequest $req)
+    public function update(ProfileRequest $request)
     {
-      dd($req->all());
+        $user = Auth::user();
+        $user->student->update($request->validated());
+        if ($user) {
+          return redirect('student/profile');
+        }
+        return redirect()->back();
     }
 }

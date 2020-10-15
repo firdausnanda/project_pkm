@@ -3,7 +3,7 @@
 @section('content')
 <div class="new-login-box">
   <div class="white-box">
-    <h3 class="box-title m-b-0">Sign UP to Admin</h3> <small>Enter your details below</small>
+    <h3 class="box-title m-b-0">Sign UP</h3> <small>Enter your details below</small>
     <form class="form-horizontal new-lg-form"action="{{ route('register') }}" method="POST">
       @csrf
 

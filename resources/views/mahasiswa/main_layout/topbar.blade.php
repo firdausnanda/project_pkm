@@ -22,7 +22,7 @@
 			</li>
 			<li class="dropdown">
 				<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> 
-					<i class="fa fa-user" style="margin-right: 5px;"></i> <b class="hidden-xs"> Firdaus Nanda </b><span class="caret"></span> </a>
+					<i class="fa fa-user" style="margin-right: 5px;"></i> <b class="hidden-xs"> {{ Auth::user()->student->nama ?? Auth::user()->name }} </b><span class="caret"></span> </a>
 					<ul class="dropdown-menu dropdown-user animated flipInY">
 						<li>
 							<div class="dw-user-box">
@@ -40,9 +40,6 @@
                             <li><a href="{{ route('student.settings')}}"><i class="ti-settings"></i> Account Settings</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">{{ __('Logout') }}</span></a>
-                     		<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        	@csrf
-                        	</form>
                         	</li>
                         </ul>
                         <!-- /.dropdown-user -->

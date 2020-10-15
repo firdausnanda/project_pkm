@@ -30,22 +30,22 @@
             @csrf
             <div class="row">
               <div class="col-lg-6">
-                <div class="form-group @error('prodi') has-error @enderror">
+                <div class="form-group @error('major_id') has-error @enderror">
                   <label for="">Program Studi</label>
-                  <select class="form-control" name="prodi">
+                  <select class="form-control" name="major_id">
                     <option value="" selected disabled>- pilih -</option>
                     @foreach($majors as $major)
-                      <option value="{{ $major->id }}" {{ (old('prodi', $student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                      <option value="{{ $major->id }}" {{ (old('major_id', $student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
                     @endforeach
                   </select>
-                  @error('prodi')
-                      <span id="prodi-validation" class="help-block">{{ $message }}</span>
+                  @error('major_id')
+                      <span id="major-id-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
-                <div class="form-group @error('name') has-error @enderror">
+                <div class="form-group @error('nama') has-error @enderror">
                   <label>Nama Lengkap</label>
-                  <input type="text" class="form-control" name="name" value="{{ old('name', $student->name) }}">
-                  @error('name')
+                  <input type="text" class="form-control" name="nama" value="{{ old('nama', $student->nama) }}">
+                  @error('nama')
                       <span id="name-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
@@ -78,7 +78,7 @@
                   <div class="col-lg-6">
                     <div class="form-group @error('tgl_lahir') has-error @enderror">
                       <label for="">Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="tgl_lahir" value="{{ old('tgl_lahir', $student->tgl_lahir) }}">
+                      <input type="text" class="form-control datepicker" name="tgl_lahir" value="{{ old('tgl_lahir', $student->tgl_lahir) }}">
                       @error('tgl_lahir')
                           <span id="tgl-lahir-validation" class="help-block">{{ $message }}</span>
                       @enderror
