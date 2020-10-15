@@ -40,9 +40,6 @@
                             <li><a href="{{ route('student.settings')}}"><i class="ti-settings"></i> Account Settings</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">{{ __('Logout') }}</span></a>
-                     		<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        	@csrf
-                        	</form>
                         	</li>
                         </ul>
                         <!-- /.dropdown-user -->
