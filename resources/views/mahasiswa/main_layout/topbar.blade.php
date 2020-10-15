@@ -2,7 +2,7 @@
 	<div class="navbar-header">
 		<div class="top-left-part">
 			<!-- Logo -->
-			<a class="logo" href="#">
+			<a class="logo" href="{{ route('student.index')}}">
 				<!-- Logo icon image, you can use font-icon also --><b>
 				<!--This is dark logo icon--><img src="{{ asset('plugins/images/itsk-logo.png')}}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="{{ asset('plugins/images/itsk-logo.png')}}" alt="home" class="light-logo" />
 			</b>
