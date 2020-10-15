@@ -112,7 +112,13 @@
 
     <script>
     $(document).ready(function() {
-        $('#myTable').DataTable();
+        $('#myTable').DataTable({
+          ordering: false,
+          columnDefs: [
+            {className: 'dt-center', targets: [0,1,2,3,4]},
+          ]
+        });
+        
         $(document).ready(function() {
             var table = $('#example').DataTable({
                 "columnDefs": [{
@@ -148,12 +154,6 @@
                     table.order([2, 'asc']).draw();
                 }
             });
-        });
-        $('#example23').DataTable({
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
         });
 
         $('#peringatan-data-pkm').modal('show');
