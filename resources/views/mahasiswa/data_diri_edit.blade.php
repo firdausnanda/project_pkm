@@ -30,16 +30,16 @@
             @csrf
             <div class="row">
               <div class="col-lg-6">
-                <div class="form-group @error('prodi') has-error @enderror">
+                <div class="form-group @error('major_id') has-error @enderror">
                   <label for="">Program Studi</label>
-                  <select class="form-control" name="prodi">
+                  <select class="form-control" name="major_id">
                     <option value="" selected disabled>- pilih -</option>
                     @foreach($majors as $major)
-                      <option value="{{ $major->id }}" {{ (old('prodi', $student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                      <option value="{{ $major->id }}" {{ (old('major_id', $student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
                     @endforeach
                   </select>
-                  @error('prodi')
-                      <span id="prodi-validation" class="help-block">{{ $message }}</span>
+                  @error('major_id')
+                      <span id="major-id-validation" class="help-block">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="form-group @error('nama') has-error @enderror">
