@@ -17,26 +17,31 @@ class UserSeeder extends Seeder
     {
       $users = array(
         [
+          "name" => "Student",
           "email" => "student@simpkm.com",
           "role" => "student",
           "password" => "123456"
         ],
         [
+          "name" => 'Teacher',
           "email" => "teacher@simpkm.com",
           "role" => "teacher",
           "password" => "123456"
         ],
         [
+          "name" => "Admin",
           "email" => "admin@simpkm.com",
           "role" => "admin",
           "password" => "123456"
         ],
         [
+          "name" => "Aan Admin",
           "email" => "firdausnanda46@gmail.com",
           "role" => "admin",
           "password" => "123456"
         ],
         [
+          "name" => "Aan Student",
           "email" => "firdausnanda45@gmail.com",
           "role" => "student",
           "password" => "123456"

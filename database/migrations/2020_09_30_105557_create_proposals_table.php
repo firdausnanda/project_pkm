@@ -15,7 +15,7 @@ class CreateProposalsTable extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('scheme_id')->constrained();
+            $table->string('scheme');
             $table->text('judul');
             $table->string('status')->nullable();
             $table->string('file')->nullable();

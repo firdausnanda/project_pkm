@@ -102,6 +102,7 @@
     <script src="{{ asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
     <script>
     $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
         $('#myTable').DataTable({
           ordering: false,
           columnDefs : [
