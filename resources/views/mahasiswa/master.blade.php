@@ -128,6 +128,8 @@
           }).attr("readonly", "readonly").css({"cursor":"pointer", "background":"white"});
     });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>
