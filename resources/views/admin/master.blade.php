@@ -117,6 +117,13 @@
           ]
         });
 
+        $('#user-table').DataTable({
+          ordering: false,
+          columnDefs: [
+            {className: 'dt-center', targets: '_all'},
+          ]
+        });
+
     });
     </script>
 
