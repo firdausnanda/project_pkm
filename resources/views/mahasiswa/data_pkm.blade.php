@@ -23,7 +23,7 @@
 </div>
 
 <div style="margin-bottom: 10px; margin-top: 10px;">
-  <button class="btn btn-info"><i class="mdi mdi-plus fa-fw"></i> Tambah Data</button>
+  <a class="btn btn-info" href="{{ route('student.proposal.create')}}" role="button"><i class="mdi mdi-plus fa-fw"></i> Usulan Baru</a>
 </div>
 
 <!-- Tabel PKM -->
