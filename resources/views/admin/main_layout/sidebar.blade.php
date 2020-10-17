@@ -22,9 +22,9 @@
       </li>
       <li> <a href="#" class=""><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data Users</span><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
-          <li><a href="#"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Mahasiswa</span></a></li>
-          <li><a href="#"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Dosen</span></a></li>
-          <li><a href="{{ url('admin/users')}}"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Admin</span></a></li>
+          <li><a href="{{ url('admin/users/student')}}"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Mahasiswa</span></a></li>
+          <li><a href="{{ url('admin/users/teacher')}}"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Dosen</span></a></li>
+          <li><a href="{{ url('admin/users/admin')}}"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Admin</span></a></li>
         </ul>
       </li>
       <li class="devider"></li>
