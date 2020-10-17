@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('nama');
             $table->string('jk');
             $table->string('nidn');
-            $table->string('tempat_lahir');
+            $table->string('tempat_lahir')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->string('email')->nullable();
             $table->string('no_hp')->nullable();
