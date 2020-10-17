@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateProposalsTable extends Migration
 {
@@ -15,6 +16,7 @@ class CreateProposalsTable extends Migration
     {
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('period_id')->constrained();
             $table->string('scheme');
             $table->text('judul');
             $table->string('status')->nullable();
@@ -30,9 +32,6 @@ class CreateProposalsTable extends Migration
      */
     public function down()
     {   
-        Schema::table('proposals', function (Blueprint $table) {
-          $table->dropForeign('proposals_scheme_id_foreign');
-        });
-        Schema::dropIfExists('proposals');
+      Schema::dropIfExists('proposals');
     }
 }
