@@ -109,8 +109,18 @@
             {className: 'dt-center', targets: [0,1,2,3,4]},
           ]
         });
+
+        $('#period-table').DataTable({
+          ordering: false,
+          columnDefs: [
+            {className: 'dt-center', targets: [0,1,2,3]},
+          ]
+        });
+
     });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>
