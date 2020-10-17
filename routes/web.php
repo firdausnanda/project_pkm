@@ -46,6 +46,11 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     // proposal management
     // Route::get('proposal', ['as' => 'proposal.index', 'uses' => 'Admin\ProposalController@index']);
     
+    // Period Management
+    Route::get('period', ['as' => 'period', 'uses' => 'Admin\PeriodController@index']);
+    Route::get('period/edit/{id}',['as' => 'period.edit', 'uses' => 'Admin\PeriodController@edit']);
+    Route::put('period/update',['as' => 'period.update', 'uses' => 'Admin\PeriodController@update']);
+    Route::post('period', ['as' => 'period.store', 'uses' => 'Admin\PeriodController@store']);
     // export features
 });
 
@@ -63,6 +68,8 @@ Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'studen
 
     // proposal_pkm management
     Route::get('proposal', ['as' => 'proposal', 'uses' => 'Student\ProposalController@index']);
+    Route::get('proposal/create', ['as' => 'proposal.create', 'uses' => 'Student\ProposalController@create']);
+
 
 
 

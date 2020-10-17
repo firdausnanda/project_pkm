@@ -16,6 +16,7 @@
       </li>
       <li> <a href="#" class="waves-effect"><i class="mdi mdi-clipboard-account fa-fw"></i> <span class="hide-menu">Data PKM</span><span class="fa arrow"></span></a>
         <ul class="nav nav-second-level">
+          <li><a href="{{ url('admin/period') }}"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Periode PKM</span></a></li>
           <li><a href="#"><i class="fa fa-caret-right"></i> <span class="hide-menu"> Usulan PKM</span></a></li>
         </ul>
       </li>

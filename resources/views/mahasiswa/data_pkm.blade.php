@@ -22,30 +22,8 @@
 	<div class="alert alert-warning"> <i class="fa fa-exclamation" aria-hidden="true"></i> Pengusulan PKM hanya dilakukan oleh masing-masing Ketua Kelompok </div>
 </div>
 
-<!-- modal pop up otomatis -->
-<div id="peringatan-data-pkm" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><strong>Perhatian</strong></h4>
-            </div>
-            <div class="modal-body">
-              <p>
-                Usulan PKM hanya dilakukan oleh Ketua Kelompok, anggota tidak perlu mengusulkan PKM.
-              </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">OK</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 <div style="margin-bottom: 10px; margin-top: 10px;">
-  <button class="btn btn-info"><i class="mdi mdi-plus fa-fw"></i> Tambah Data</button>
+  <a class="btn btn-info" href="{{ route('student.proposal.create')}}" role="button"><i class="mdi mdi-plus fa-fw"></i> Usulan Baru</a>
 </div>
 
 <!-- Tabel PKM -->
@@ -107,3 +85,16 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+  $(document).ready(function () {
+    swal(
+      'Info',
+      'Pengusulan PKM hanya dilakukan oleh masing-masing Ketua Kelompok',
+      'info'
+    )
+  });
+</script>
+  
+@endpush

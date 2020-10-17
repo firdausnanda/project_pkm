@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-class CreateProposalsTable extends Migration
+class CreatePeriodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +13,10 @@ class CreateProposalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('proposals', function (Blueprint $table) {
+        Schema::create('periods', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('period_id')->constrained();
-            $table->string('scheme');
-            $table->text('judul');
-            $table->string('status')->nullable();
-            $table->string('file')->nullable();
+            $table->year('tahun');
+            $table->enum('status',['buka','tutup'])->default('buka');
             $table->timestamps();
         });
     }
@@ -31,7 +27,7 @@ class CreateProposalsTable extends Migration
      * @return void
      */
     public function down()
-    {   
-      Schema::dropIfExists('proposals');
+    {
+        Schema::dropIfExists('periods');
     }
 }
