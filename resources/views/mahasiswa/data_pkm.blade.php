@@ -107,3 +107,16 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+  $(document).ready(function () {
+    swal(
+      'Info',
+      'Pengusulan PKM hanya dilakukan oleh masing-masing Ketua Kelompok',
+      'info'
+    )
+  });
+</script>
+  
+@endpush
