@@ -62,6 +62,8 @@ Route::group(['middleware' => ['auth','student','verified'], 'prefix' => 'studen
 
     // proposal_pkm management
     Route::get('proposal', ['as' => 'proposal', 'uses' => 'Student\ProposalController@index']);
+    Route::get('proposal/create', ['as' => 'proposal.create', 'uses' => 'Student\ProposalController@create']);
+
 
 
 
