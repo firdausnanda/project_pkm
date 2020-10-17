@@ -41,7 +41,7 @@
               <td>Ketua</td>
               <td><span class="label label-warning">{{ ucwords('proses review') }}</span></td>
               <td>
-                <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Lihat Detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
               </td>
             </tr>
             <tr>
@@ -50,7 +50,7 @@
               <td>Aggota</td>
               <td><span class="label label-success">{{ ucwords('selesai') }}</span></td>
               <td>
-                <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Lihat Detail"><i class="fa fa-eye" aria-hidden="true"></i></button>
               </td>
             </tr>
           </tbody>
