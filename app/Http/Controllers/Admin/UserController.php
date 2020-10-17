@@ -3,21 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     //
-	public function index()
+	public function index($role)
 	{
-    	// ambil data dari table users
-		$users = DB::table('users')->get();
-
-    	//dd("ashdguasd");
-
-    	//kirim data ke view
-		return view('admin.akun',['users' => $users]);
+    // ambil data dari table users
+    $users = User::whereRole($role)->get();
+    if ($role == 'admin') {
+      return view('admin.akun',['users' => $users]);
+    } elseif ($role == 'teacher') {
+      return view('admin.akun_teacher', compact('users'));
+    } elseif ($role == 'student') {
+      return view('admin.akun_student', compact('users'));
+    }
 	}
 
 	public function store(Request $request)
