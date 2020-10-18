@@ -100,6 +100,8 @@
     <script src="{{ asset('plugins/bower_components/datatables/jquery.dataTables.min.js')}}"></script>
     <!--Style Switcher -->
     <script src="{{ asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    {{-- Datetime Picker --}}
+    <script src="{{ asset('bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
     <script>
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
@@ -123,6 +125,12 @@
             {className: 'dt-center', targets: '_all'},
           ]
         });
+
+        $('.datepicker').datepicker({
+            autoclose: true,
+            format: "yyyy-mm-dd",
+            orientation: "bottom right"
+          }).attr("readonly", "readonly").css({"cursor":"pointer", "background":"white"});
 
     });
     </script>
