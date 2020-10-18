@@ -110,39 +110,60 @@
             <label for="">Nama</label>
             <input type="text" class="form-control" name="nama" value="{{ old('nama', $user->teacher->nama) }}" required>
           </div>
-          <div class="form-group">
-            <label for="">NIDN/NIDK</label>
-            <input type="text" class="form-control" name="nidn" value="{{ old('nidn', $user->teacher->nidn) }}" required>
-          </div>
-          <div class="form-group">
-            <label for="">Program Studi</label>
-            <select class="form-control" name="major_id">
-              @foreach($majors as $major)
-                <option value="{{ $major->id }}" {{ (old('major_id', $user->teacher->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
-              @endforeach
-            </select>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">NIDN/NIDK</label>
+                <input type="text" class="form-control" name="nidn" value="{{ old('nidn', $user->teacher->nidn) }}" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Program Studi</label>
+                <select class="form-control" name="major_id">
+                  @foreach($majors as $major)
+                    <option value="{{ $major->id }}" {{ (old('major_id', $user->teacher->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
           </div>
           <div class="row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <label for="">Jenis Kelamin</label>
+                <select class="form-control" name="jk">
+                  <option value="laki-laki" {{ (old('jk', $user->teacher->jk) == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
+                  <option value="perempuan" {{ (old('jk', $user->teacher->jk) == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
+                </select>
+              </div>
+            </div>
             <div class="col-lg-4">
               <div class="form-group">
                 <label for="">Tempat Lahir</label>
                 <input type="text" class="form-control" name="tempat_lahir">
               </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-4">
               <div class="form-group">
                 <label for="">Tanggal Lahir</label>
                 <input type="text" class="form-control datepicker" name="tgl_lahir" value="{{ old('tgl_lahir', $user->teacher->tgl_lahir) }}">
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="">Email</label>
-            <input type="email"class="form-control" name="email" value="{{ old('email', $user->email) }}">
-          </div>
-          <div class="form-group">
-            <label for="">No. HP</label>
-            <input type="text"class="form-control" name="no_hp" value="{{ old('nidn', $user->teacher->no_hp) }}">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">Email</label>
+                <input type="email"class="form-control" name="email" value="{{ old('email', $user->email) }}">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label for="">No. HP</label>
+                <input type="text"class="form-control" name="no_hp" value="{{ old('nidn', $user->teacher->no_hp) }}">
+              </div>
+            </div>
           </div>
         </form>
       </div>
