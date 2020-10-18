@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     Route::get('users/{role}', ['as' => 'users.index', 'uses' => 'Admin\UserController@index']);
     // Route::get('users/show', ['as' => 'users.show', 'uses' => 'Admin\UserController@show']);
     Route::post('users/store', ['as' => 'users.store', 'uses' => 'Admin\UserController@store']);
-    // Route::put('users/update', ['as' => 'users.update', 'uses' => 'Admin\UserController@update']);
+    Route::put('users/update', ['as' => 'users.update', 'uses' => 'Admin\UserController@update']);
 
     // major management
     // Route::get('major', ['as' => 'major.index', 'uses' => 'Admin\MajorController@index']);
@@ -40,7 +40,9 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     // Route::get('student', ['as' => 'student.index', 'uses' => 'Admin\StudentController@index']);
     
     // teacher management
-    // Route::get('teacher', ['as' => 'teacher.index', 'uses' => 'Admin\TeacherController@index']);
+    Route::get('users/teacher', ['as' => 'teacher.index', 'uses' => 'Admin\TeacherController@index']);
+    Route::get('users/teacher/{id}', ['as' => 'teacher.edit', 'uses' => 'Admin\TeacherController@edit']);
+    Route::put('users/teacher', ['as' => 'teacher.update', 'uses' => 'Admin\TeacherController@update']);
 
     // proposal management
     // Route::get('proposal', ['as' => 'proposal.index', 'uses' => 'Admin\ProposalController@index']);
