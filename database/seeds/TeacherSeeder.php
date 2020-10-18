@@ -13,8 +13,8 @@ class TeacherSeeder extends Seeder
     public function run()
     {
         DB::table('teachers')->insert([
-          'id' => 2,
           'major_id' => 1,
+          'user_id' => 2,
           'nama' => 'Teacher',
           'jk' => 'Laki-laki',
           'nidn' => '1234567',

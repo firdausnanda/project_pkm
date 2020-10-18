@@ -80,7 +80,7 @@
               @foreach($users as $u)
               <tr>
                 <td class="text-center">{{ $loop->iteration }}</td>
-                <td>{{ $u->email }}</td>
+                <td><a href="{{ route('admin.teacher.edit', ['id' => $u->id ])}}">{{ $u->email }}</a></td>
                 <td>{{ $u->role }}</td>
                 <td>{{ $u->name }}</td>
                 <td>
