@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\StudentRequest;
 use App\Major;
 use App\Student;
 use App\User;
@@ -43,7 +43,7 @@ class HomeController extends Controller
       return view('mahasiswa.data_diri_create', compact('majors','student'));
     }
 
-    public function store(ProfileRequest $request)
+    public function store(StudentRequest $request)
     {
         $user = Auth::user();
         $user->student->create($request->validated());
@@ -62,7 +62,7 @@ class HomeController extends Controller
       }
     }
 
-    public function update(ProfileRequest $request)
+    public function update(StudentRequest $request)
     {
         $user = Auth::user();
         $user->student->update($request->validated());
