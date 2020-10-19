@@ -161,7 +161,7 @@
             <div class="col-lg-6">
               <div class="form-group @error('no_hp') has-error @enderror">
                 <label for="">No. HP</label>
-                <input type="text"class="form-control" name="no_hp" value="{{ old('nidn', $user->teacher->no_hp) }}">
+                <input type="text"class="form-control" name="no_hp" value="{{ old('no_hp', $user->teacher->no_hp) }}">
                 @error('no_hp')
                     <span class="help-block">{{ $message }}</span>
                 @enderror
