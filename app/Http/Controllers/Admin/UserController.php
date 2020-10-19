@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,5 +34,20 @@ class UserController extends Controller
 			'role' => $request->role,
 			]);
 		return redirect('admin/users');
-	}
+  }
+  
+  public function update(UserRequest $request)
+  {
+    $user = User::findOrFail($request->id);
+    $user->name = $request->name;
+    $user->email = $request->email;
+    if ($request->password) {
+      $user->password = Hash::make($request->password);
+    }
+    $user->save;
+    if ($user) {
+      return redirect()->back()->with('success', 'Data berhasil disimpan!');
+    }
+    return redirect()->back();
+  }
 }
