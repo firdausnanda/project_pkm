@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,26 +30,24 @@ class UserController extends Controller
 		// insert data ke table users
 		DB::table('users')->insert([
 			'email' => $request->email,
-			'password' => bcrypt($request->password),
-			'role' => strtolower($request->role),
+			'password' => Hash::make($request->password),
+			'role' => $request->role,
 			]);
 		return redirect('admin/users');
-
-	}
-
-	public function update(Request $request)
-	{
-		DB::table('users')->where('id',$request->id)->update([
-			'email' => $request->email,
-			'password' => bcrypt($request->password),
-			'role' => strtolower($request->role)			
-		]);
-		return redirect('admin/users');
-	}
-
-	public function delete($id)
-	{
-		DB::table('users')->where('id',$id)->delete();	
-		return redirect('admin/users');
-	}
+  }
+  
+  public function update(UserRequest $request)
+  {
+    $user = User::findOrFail($request->id);
+    $user->name = $request->name;
+    $user->email = $request->email;
+    if ($request->password) {
+      $user->password = Hash::make($request->password);
+    }
+    $user->save;
+    if ($user) {
+      return redirect()->back()->with('success', 'Data berhasil disimpan!');
+    }
+    return redirect()->back();
+  }
 }

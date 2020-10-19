@@ -33,26 +33,39 @@
         Data Akun
       </div>
       <div class="panel-body m-b-0 p-t-0 p-b-0">
-        <form action="#" method="post" id="edit-akun-teacher">
+        <form action="{{ route('admin.users.update') }}" method="post" id="edit-akun-teacher">
           @csrf
           @method('put')
-          <div class="form-group">
+          <input type="text" name="id" value="{{ $user->id }}" hidden>
+          <div class="form-group @error('name') has-error @enderror">
             <label for="">Nama</label>
             <input type="text" class="form-control" name="name" value={{ old('name', $user->name) }}>
+            @error('name')
+                <span class="help-block">{{ $message }}</span>
+            @enderror
           </div>
-          <div class="form-group">
+          <div class="form-group @error('email') has-error @enderror">
             <label for="">Email</label>
             <input type="email" class="form-control" name="email" value={{ old('email', $user->email) }}>
+            @error('email')
+                <span class="help-block">{{ $message }}</span>
+            @enderror
           </div>
-          <div class="form-group">
+          <div class="form-group @error('password') has-error @enderror">
             <label for="">Password</label>
             <input type="password" class="form-control" name="password">
+            @error('password')
+                <span class="help-block">{{ $message }}</span>
+            @enderror
           </div>
-          <div class="form-group">
+          <div class="form-group @error('role') has-error @enderror">
             <label for="">Role</label>
             <select class="form-control" name="role">
               <option value="{{ $user->role }}" selected>{{ ucfirst($user->role) }}</option>
             </select>
+            @error('role')
+                <span class="help-block">{{ $message }}</span>
+            @enderror
           </div>
         </form>
       </div>
