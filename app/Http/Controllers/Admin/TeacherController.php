@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TeacherRequest;
 use App\Major;
 use App\User;
+use App\Teacher;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -17,13 +19,21 @@ class TeacherController extends Controller
 
     public function edit($id)
     {
-      $user = User::with('teacher')->whereId($id)->first();
+      $user = User::whereId($id)->whereHas('teacher')->first();
       $majors = Major::all();
+      if ($user == null) {
+        return abort(404);
+      }
       return view('admin.akun_teacher_edit', compact('user', 'majors'));
     }
 
-    public function update(Request $request)
+    public function update(TeacherRequest $request)
     {
-      dd($request->all());
+      $user = User::findOrFail($request->id);
+      $user->teacher()->update($request->validated());
+      if ($user) {
+        return redirect()->back()->with('success', 'Data berhasil disimpan!');
+      }
+      return redirect()->back();
     }
 }
