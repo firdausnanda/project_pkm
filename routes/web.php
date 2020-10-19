@@ -37,7 +37,9 @@ Route::group(['middleware' => ['auth','admin'], 'prefix' => 'admin', 'as' => 'ad
     // Route::get('major/show/', ['as' => 'major.show', 'uses' => 'Admin\MajorController@show']);
 
     // student management
-    // Route::get('student', ['as' => 'student.index', 'uses' => 'Admin\StudentController@index']);
+    Route::get('users/student', ['as' => 'student.index', 'uses' => 'Admin\StudentController@index']);
+    Route::get('users/student/{id}', ['as' => 'student.edit', 'uses' => 'Admin\StudentController@edit']);
+    Route::put('users/student', ['as' => 'student.update', 'uses' => 'Admin\StudentController@update']);
     
     // teacher management
     Route::get('users/teacher', ['as' => 'teacher.index', 'uses' => 'Admin\TeacherController@index']);
