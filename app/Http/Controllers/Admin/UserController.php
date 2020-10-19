@@ -25,15 +25,27 @@ class UserController extends Controller
     }
 	}
 
-	public function store(Request $request)
+	public function store(UserRequest $request)
 	{
-		// insert data ke table users
-		DB::table('users')->insert([
-			'email' => $request->email,
-			'password' => Hash::make($request->password),
-			'role' => $request->role,
-			]);
-		return redirect('admin/users');
+    $user = User::create([
+      'name' => $request->name,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+      'role' => $request->role
+    ]);
+
+    if ($user) {
+      $user->student()->create([
+        "major_id" => 1,
+        "nama" => $request->name,
+        "nim" => 0
+      ]);
+      if ($user) {
+        return redirect()->back()->with('success', 'Data berhasil disimpan!');
+      }
+    }
+
+    return redirect()->back();
   }
   
   public function update(UserRequest $request)

@@ -4,14 +4,14 @@
 <!-- Judul Halaman -->
 <div class="row bg-title">
 	<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-		<h4 class="page-title" style="font-weight: bold;">Data Akun Dosen</h4> 
+		<h4 class="page-title" style="font-weight: bold;">Data Akun Mahasiswa</h4> 
 	</div>
 	<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 		<button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
 		<!-- <a href="#" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a> -->
 		<ol class="breadcrumb">
 			<li><a href="/admin">Dashboard</a></li>
-			<li><a href="/admin/users/teacher">Data Akun Dosen</a></li>
+			<li><a href="/admin/users/student">Data Akun Mahasiswa</a></li>
 			<li class="active">Edit</li>
 		</ol>
 	</div>
@@ -33,7 +33,7 @@
         Data Akun
       </div>
       <div class="panel-body m-b-0 p-t-0 p-b-0">
-        <form action="{{ route('admin.users.update') }}" method="post" id="edit-akun-teacher">
+        <form action="{{ route('admin.users.update') }}" method="post" id="edit-akun-student">
           @csrf
           @method('put')
           <input type="text" name="id" value="{{ $user->id }}" hidden>
@@ -70,7 +70,7 @@
         </form>
       </div>
       <div class="panel-footer">
-        <button type="button" onclick="event.preventDefault(); document.getElementById('edit-akun-teacher').submit();" class="btn btn-primary">Simpan</button>
+        <button type="button" onclick="event.preventDefault(); document.getElementById('edit-akun-student').submit();" class="btn btn-primary">Simpan</button>
       </div>
 		</div>
 	</div>
@@ -81,23 +81,23 @@
         Data Profil
       </div>
       <div class="panel-body m-b-0 p-t-0 p-b-0">
-        <form action="{{ route('admin.teacher.update')}}" method="post" id="edit-profil-teacher">
+        <form action="{{ route('admin.student.update')}}" method="post" id="edit-profil-student">
           @csrf
           @method('put')
           <input type="text" name="id" value="{{ $user->id }}" hidden>
           <div class="form-group @error('nama') has-error @enderror">
             <label for="">Nama</label>
-            <input type="text" class="form-control" name="nama" value="{{ old('nama', $user->teacher->nama) }}" required>
+            <input type="text" class="form-control" name="nama" value="{{ old('nama', $user->student->nama) }}" required>
             @error('nama')
                 <span class="help-block">{{ $message }}</span>
             @enderror
           </div>
           <div class="row">
             <div class="col-lg-6">
-              <div class="form-group @error('nidn') has-error @enderror">
-                <label for="">NIDN/NIDK</label>
-                <input type="text" class="form-control" name="nidn" value="{{ old('nidn', $user->teacher->nidn) }}" required>
-                @error('nidn')
+              <div class="form-group @error('nim') has-error @enderror">
+                <label for="">NIM</label>
+                <input type="text" class="form-control" name="nim" value="{{ old('nim', $user->student->nim) }}" required>
+                @error('nim')
                     <span class="help-block">{{ $message }}</span>
                 @enderror
               </div>
@@ -107,7 +107,7 @@
                 <label for="">Program Studi</label>
                 <select class="form-control" name="major_id">
                   @foreach($majors as $major)
-                    <option value="{{ $major->id }}" {{ (old('major_id', $user->teacher->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
+                    <option value="{{ $major->id }}" {{ (old('major_id', $user->student->major_id) == $major->id) ? "selected" : '' }}>{{ $major->fullname }}</option>
                   @endforeach
                 </select>
                 @error('major_id')
@@ -121,8 +121,8 @@
               <div class="form-group @error('jk') has-error @enderror">
                 <label for="">Jenis Kelamin</label>
                 <select class="form-control" name="jk">
-                  <option value="laki-laki" {{ (old('jk', $user->teacher->jk) == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
-                  <option value="perempuan" {{ (old('jk', $user->teacher->jk) == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
+                  <option value="laki-laki" {{ (old('jk', $user->student->jk) == 'laki-laki') ? 'selected' : '' }}>Laki-laki</option>
+                  <option value="perempuan" {{ (old('jk', $user->student->jk) == 'perempuan') ? 'selected' : '' }}>Perempuan</option>
                 </select>
                 @error('jk')
                     <span class="help-block">{{ $message }}</span>
@@ -132,7 +132,7 @@
             <div class="col-lg-4">
               <div class="form-group @error('tempat_lahir') has-error @enderror">
                 <label for="">Tempat Lahir</label>
-                <input type="text" class="form-control" name="tempat_lahir" value="{{ old('tempat_lahir', $user->teacher->tempat_lahir) }}">
+                <input type="text" class="form-control" name="tempat_lahir" value="{{ old('tempat_lahir', $user->student->tempat_lahir) }}">
                 @error('tempat_lahir')
                     <span class="help-block">{{ $message }}</span>
                 @enderror
@@ -141,7 +141,7 @@
             <div class="col-lg-4">
               <div class="form-group @error('tgl_lahir') has-error @enderror">
                 <label for="">Tanggal Lahir</label>
-                <input type="text" class="form-control datepicker" name="tgl_lahir" value="{{ old('tgl_lahir', $user->teacher->tgl_lahir) }}">
+                <input type="text" class="form-control datepicker" name="tgl_lahir" value="{{ old('tgl_lahir', $user->student->tgl_lahir) }}">
                 @error('tgl_lahir')
                     <span class="help-block">{{ $message }}</span>
                 @enderror
@@ -161,7 +161,7 @@
             <div class="col-lg-6">
               <div class="form-group @error('no_hp') has-error @enderror">
                 <label for="">No. HP</label>
-                <input type="text"class="form-control" name="no_hp" value="{{ old('no_hp', $user->teacher->no_hp) }}">
+                <input type="text"class="form-control" name="no_hp" value="{{ old('no_hp', $user->student->no_hp) }}">
                 @error('no_hp')
                     <span class="help-block">{{ $message }}</span>
                 @enderror
@@ -171,7 +171,7 @@
         </form>
       </div>
       <div class="panel-footer">
-        <button type="button" onclick="event.preventDefault(); document.getElementById('edit-profil-teacher').submit();" class="btn btn-primary">Simpan</button>
+        <button type="button" onclick="event.preventDefault(); document.getElementById('edit-profil-student').submit();" class="btn btn-primary">Simpan</button>
       </div>
     </div>
   </div>
